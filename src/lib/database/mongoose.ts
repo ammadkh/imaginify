@@ -8,7 +8,6 @@ interface MongooseConnection {
 }
 
 let cached: MongooseConnection = (global as any).mongoose;
-
 if(!cached) {
     cached = (global as any).mongoose = {
         conn: null, promise: null
@@ -17,7 +16,7 @@ if(!cached) {
 
 
 export const connectToDatabase = async() => {
-   // if(cached.conn) return cached.conn;
+   if(cached.conn) return cached.conn;
     if(!MONGODB_URL) throw new Error('Mongodb url is not defined');
 
     cached.promise = mongoose.connect(MONGODB_URL, { bufferCommands: false});
