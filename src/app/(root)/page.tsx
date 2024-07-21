@@ -8,17 +8,7 @@ import {
 } from "@clerk/nextjs";
 
 const Home = () => {
-  return (
-    <p>
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-      Home
-    </p>
-  );
+  return <p>Home</p>;
 };
 
 export default Home;
